@@ -1,0 +1,25 @@
+﻿@model IEnumerable<TCompany.ViewModel.TourViewModel>
+
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h1>All Tours</h1>
+
+<div class="row mt-5 mb-2">
+    @{ foreach (var tour in Model)
+        {
+
+    <div class="col-lg-4">
+            <img class="img-thumbnail" src="@tour.ImgSrc" />
+            <h2>@tour.ToursName</h2>
+            <p>Страна : @tour.Country</p>
+            <p>Cтоимость одного дня : @tour.DaysCost $</p>
+            <p><a class="btn btn-warning" asp-action="GetId" asp-controller="Tours" asp-route-id="@tour.TourId">More</a></p>
+    </div>
+            }
+        }
+</div>
+        
+
+
